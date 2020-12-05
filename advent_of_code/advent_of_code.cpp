@@ -124,13 +124,7 @@ static void day2(void)
 			i = 0;
 			cnt = 0;
 
-			while (substr[i] != '\0' )
-			{
-				cnt += (substr[i] == target);
-				i++;
-			}
-
-			valid += (cnt >= min && cnt <= max);
+			valid += (substr[min - 1 ] == target) ^ (substr[max - 1] == target);
 		}
 		else
 		{
