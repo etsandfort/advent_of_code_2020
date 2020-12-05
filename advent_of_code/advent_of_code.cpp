@@ -48,15 +48,18 @@ static void parse_input(const char * name, int output[], int len, int * count)
 static void day1(int list[], int count)
 {
 #define target 2020
-	int i, j;
+	int i, j, k;
 
 	for (i = 0; i < count; i++)
 	{
 		for (j = i + 1; j < count; j++)
 		{
-			if (list[i] + list[j] == target)
+			for (k = j + 1; k < count; k++)
 			{
-				printf("%i", list[i] * list[j]);
+				if (list[i] + list[j] + list[k] == target)
+				{
+					printf("%i", list[i] * list[j] * list[k]);
+				}
 			}
 		}
 	}
